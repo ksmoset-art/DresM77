@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>DreamPhone — Reed's phone</title>
+<title>DreamPhone — Reed Edition</title>
 <style>
 :root{--accent:#83a9ff;--glass:rgba(17,20,29,.72);--line:rgba(255,255,255,.14);--muted:#aeb5c5}
 *{box-sizing:border-box} body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 10%,#29314b,#10131c 55%,#080a10);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#fff;display:flex;justify-content:center;align-items:center;padding:18px}
@@ -57,6 +57,146 @@
 .muted{color:var(--muted);font-size:12px}
 .footerhint{position:absolute;bottom:8px;left:0;right:0;text-align:center;color:#ffffff70;font-size:10px;pointer-events:none}
 @media(max-height:700px){.lock{padding-top:20px}.clock{font-size:62px}.key{width:52px;height:52px}}
+
+/* DreamPhone visual refresh — iOS-inspired dark custom edition */
+:root{
+  --accent:#8bbcff; --glass:rgba(17,21,31,.76);
+  --line:rgba(255,255,255,.105); --muted:#a8b0c0;
+  --ink:#080b12; --blue:#1685f8;
+}
+html,body{min-height:100%;background:#080a10}
+body{
+  background:
+    radial-gradient(ellipse at 18% 8%,rgba(91,116,158,.26),transparent 38%),
+    radial-gradient(ellipse at 82% 92%,rgba(111,79,126,.20),transparent 34%),
+    #080a10;
+  padding:0;align-items:center;
+}
+.phone{
+  width:min(430px,100vw);height:min(920px,100dvh);min-height:620px;
+  border:1px solid rgba(255,255,255,.25);border-radius:44px;
+  background:#080b12;box-shadow:0 35px 100px #000c,0 0 0 7px #151820,0 0 0 8px #343945;
+}
+.screen{
+  background:
+    linear-gradient(180deg,rgba(5,8,15,.12),rgba(5,8,15,.56)),
+    radial-gradient(ellipse at 50% 0%,#41516b 0%,#202b3e 38%,#0d121d 82%);
+}
+.screen.wallpaper-1{
+  background:
+    linear-gradient(180deg,rgba(5,8,15,.10),rgba(5,8,15,.55)),
+    radial-gradient(ellipse at 25% 15%,#60738e,#29384e 42%,#0b101a 88%);
+}
+.screen.wallpaper-2{
+  background:
+    linear-gradient(180deg,rgba(7,8,15,.10),rgba(7,8,15,.58)),
+    radial-gradient(ellipse at 75% 20%,#967889,#48435b 42%,#11131d 85%);
+}
+.screen.wallpaper-3{
+  background:
+    linear-gradient(180deg,rgba(4,9,12,.12),rgba(4,9,12,.58)),
+    linear-gradient(155deg,#83939a,#40545c 48%,#101820 90%);
+}
+.status{height:42px;padding:13px 27px 0;font-size:12px;letter-spacing:.15px}
+.island{top:9px;width:112px;height:28px;background:#020306;box-shadow:inset 0 1px 2px #ffffff12}
+.view{inset:42px 0 0;padding:18px 21px 34px;scrollbar-width:none}
+.view::-webkit-scrollbar{display:none}
+.lock{padding-top:62px}
+.date{font-size:15px;font-weight:550;letter-spacing:.2px;color:#f3f5fb}
+.clock{font-size:88px;font-weight:230;letter-spacing:-5px;margin:0 0 14px;color:#f7f8fc;text-shadow:0 5px 28px #0008}
+.lock-note{font-size:13px;color:#dce3ef;margin-top:18px}
+.unlock{width:205px;margin-top:23px;padding:13px;background:rgba(8,12,20,.24);border:1px solid #ffffff26;border-radius:22px;backdrop-filter:blur(22px)}
+.dots{font-size:18px;letter-spacing:9px;color:#fff}
+.keypad{gap:11px;margin:18px auto;max-width:230px}
+.key{width:60px;height:60px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.13);font-size:22px;font-weight:400;backdrop-filter:blur(16px);transition:.15s}
+.key:active{background:rgba(255,255,255,.28)}
+.btn{border:1px solid #ffffff1c;background:#ffffff12;color:#f4f6fb;border-radius:20px;padding:10px 14px}
+.home-head{margin:4px 0 20px;color:#f1f4fb;font-size:12px;font-weight:650;letter-spacing:.7px}
+.widget{
+  padding:17px 17px 16px;border-radius:25px;
+  background:linear-gradient(135deg,rgba(28,38,56,.77),rgba(15,21,33,.66));
+  border:1px solid #ffffff20;box-shadow:0 12px 30px #0002;
+  backdrop-filter:blur(22px);margin-bottom:26px;
+}
+.widget strong{font-size:19px;font-weight:650;letter-spacing:-.3px}
+.widget p{color:#d4dbea;font-size:12px;line-height:1.45}
+.apps{gap:22px 12px}
+.app{font-size:11px;font-weight:500;color:#f4f5fa;letter-spacing:.1px;gap:7px}
+.app-icon{
+  height:57px;width:57px;border-radius:17px;font-size:26px;
+  box-shadow:0 7px 16px #0005,inset 0 1px 1px #ffffff45;
+  border:1px solid #ffffff28;
+}
+.imsg{background:linear-gradient(150deg,#72e69a,#16a85b)}
+.insta{background:linear-gradient(145deg,#7867e8,#d84f93 62%,#f5a24f)}
+.phoneapp{background:linear-gradient(150deg,#6de6a0,#169c61)}
+.settings{background:linear-gradient(150deg,#c6ccd6,#687386)}
+.photos{background:conic-gradient(from 20deg,#ff647b,#ffb34e,#f6dc68,#61d6ad,#60a9f4,#a879ec,#ff647b)}
+.dock{
+  bottom:17px;left:16px;right:16px;padding:11px 8px;
+  border-radius:25px;background:rgba(235,240,250,.17);
+  border:1px solid rgba(255,255,255,.20);backdrop-filter:blur(28px);
+  box-shadow:0 10px 30px #0003;
+}
+.header{
+  gap:11px;padding:3px 0 14px;border-bottom:1px solid var(--line);margin-bottom:15px
+}
+.back{color:#82b7ff;font-size:25px;line-height:1;padding:2px 7px}
+.avatar,.callavatar{
+  background:linear-gradient(145deg,#d9e0ed,#8291aa 55%,#3c4a60);
+  color:#182131;border:1px solid #ffffff55;box-shadow:0 3px 12px #0004
+}
+.header h2{font-size:16px;font-weight:650;letter-spacing:-.2px}
+.header small{font-size:11px;color:#aeb8ca}
+.stamp{font-size:10px;color:#8e9aae;margin:14px 0 18px}
+.messages{gap:9px;padding-bottom:18px}
+.bubble{
+  max-width:84%;padding:11px 14px;border-radius:20px;
+  font-size:14px;line-height:1.42;box-shadow:0 2px 7px #0002
+}
+.incoming{background:#292e38;color:#f2f3f7;border-bottom-left-radius:7px}
+.outgoing{background:linear-gradient(145deg,#258cf8,#0874e8);color:white;border-bottom-right-radius:7px}
+.composer{
+  bottom:-28px;padding:10px 0 2px;gap:8px;
+  background:linear-gradient(transparent,#0d111a 30%)
+}
+.composer input,.field input,.field select{
+  background:rgba(255,255,255,.09);border:1px solid #ffffff20;
+  border-radius:22px;color:#f7f8fb;padding:12px 15px
+}
+.composer button,.primary{background:#1685f8;border-radius:50%;width:40px;height:40px;padding:0;font-size:18px}
+.section{
+  background:rgba(255,255,255,.055);border:1px solid #ffffff13;
+  border-radius:21px;padding:15px;margin:13px 0;
+  box-shadow:0 8px 22px #00012
+}
+.section h3{font-size:14px;font-weight:650;margin-bottom:12px}
+.field{color:#e1e5ee;font-size:13px}
+.field label{width:105px;color:#bfc8d7}
+.field input,.field select{background:#1b2230}
+.swatch{border:2px solid #ffffff55;border-radius:16px;box-shadow:0 4px 12px #0003}
+.post{background:rgba(255,255,255,.055);border:1px solid #ffffff17;border-radius:21px}
+.posttop{padding:13px}
+.postimg{height:230px;background:linear-gradient(145deg,#64798a,#26394b 60%,#a18d88)}
+.post p{line-height:1.5}
+.callcard{padding:30px 10px}
+.callavatar{width:96px;height:96px;font-size:43px}
+.callname{font-size:26px;font-weight:600;letter-spacing:-.6px}
+.callstate{color:#aeb8ca}
+.transcript{background:rgba(255,255,255,.07);border:1px solid #ffffff12;border-radius:20px;white-space:pre-line}
+.callactions button{background:rgba(255,255,255,.14);border:1px solid #ffffff16}
+.callactions .end{background:#ed4d55;border:0}
+.history-item{border-bottom:1px solid #ffffff14;padding:15px 3px}
+.muted{color:#9da8ba}
+.footerhint{color:#ffffff85}
+@media(max-width:480px){
+ body{display:block}
+ .phone{width:100vw;height:100dvh;min-height:600px;border:0;border-radius:0;box-shadow:none}
+ .island{top:8px}
+}
+@media(min-width:481px){body{padding:24px}}
+@media(max-height:700px){.lock{padding-top:22px}.clock{font-size:66px}.key{width:52px;height:52px}}
+
 </style>
 </head>
 <body>
